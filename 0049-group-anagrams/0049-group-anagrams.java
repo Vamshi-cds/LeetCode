@@ -20,11 +20,6 @@ class Solution {
         for(char x: s.toCharArray()){
             az[x-'a']++;
         }
-        StringBuilder sb=new StringBuilder();
-        for(int count: az){
-            sb.append("#");
-            sb.append(count);
-        }
-        return sb.toString();
+        return Arrays.toString(az);
     }
 }
