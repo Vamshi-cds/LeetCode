@@ -1,13 +1,23 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
-        Map<Integer, Integer> check = new HashMap<>();
-        for(int i=0;i<numbers.length;i++){
-            if(check.containsKey(target-numbers[i])){
-                //check.put(numbers[i],numbers[i]);
-                return new int[]
-                {check.get(target-numbers[i]),i+1};
+        int left=0;
+        int right=numbers.length-1;
+        
+        while(left<right){
+            int cursum=numbers[left]+numbers[right];
+            /*System.out.println(cursum);
+            System.out.println(left+1);
+            System.out.println( right+1);*/
+            if(cursum<target){
+                left++;
             }
-            check.put(numbers[i],i+1);
+            if(cursum>target){
+                right--;
+            }
+            if(cursum == target){
+                return new int[]{left+1,right+1};
+            }
+            
         }
         return new int[]{};
     }
