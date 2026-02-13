@@ -7,6 +7,7 @@ class Solution {
 
                 //return new int[]{check.get(nums[i]),i};
             }
+            //Cool
             check.put(nums[i],i);
         }
         return new int[]{};
